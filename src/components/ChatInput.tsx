@@ -26,8 +26,8 @@ export function ChatInput({ onSend, onStop, isStreaming, disabled }: ChatInputPr
   };
 
   return (
-    <div className="border-t border-border bg-card/50 backdrop-blur-sm p-4">
-      <div className="max-w-3xl mx-auto flex gap-3 items-end">
+    <div className="border-t border-border bg-card/50 backdrop-blur-sm p-3 sm:p-4">
+      <div className="max-w-3xl mx-auto flex gap-2 sm:gap-3 items-end">
         <textarea
           ref={textareaRef}
           value={input}
@@ -40,25 +40,25 @@ export function ChatInput({ onSend, onStop, isStreaming, disabled }: ChatInputPr
           }}
           placeholder="Enter transmission..."
           rows={1}
-          className="flex-1 resize-none bg-secondary border border-border rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50 font-body"
+          className="flex-1 resize-none bg-secondary border border-border rounded-lg px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50 font-body"
           disabled={disabled}
         />
         {isStreaming ? (
           <button
             onClick={onStop}
-            className="flex-shrink-0 w-10 h-10 rounded-lg bg-destructive text-destructive-foreground flex items-center justify-center hover:opacity-80 transition-opacity"
+            className="flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-destructive text-destructive-foreground flex items-center justify-center hover:opacity-80 transition-opacity"
             aria-label="Stop"
           >
-            <Square className="w-4 h-4" />
+            <Square className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           </button>
         ) : (
           <button
             onClick={handleSubmit}
             disabled={!input.trim() || disabled}
-            className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary text-primary-foreground flex items-center justify-center hover:opacity-90 transition-opacity disabled:opacity-30 disabled:cursor-not-allowed"
+            className="flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-primary text-primary-foreground flex items-center justify-center hover:opacity-90 transition-opacity disabled:opacity-30 disabled:cursor-not-allowed"
             aria-label="Send"
           >
-            <Send className="w-4 h-4" />
+            <Send className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           </button>
         )}
       </div>
