@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 20% 4%;
+    --foreground: 40 20% 90%;
+
+    --card: 240 15% 7%;
+    --card-foreground: 40 20% 90%;
+
+    --popover: 240 15% 7%;
+    --popover-foreground: 40 20% 90%;
+
+    --primary: 28 100% 55%;
+    --primary-foreground: 240 20% 4%;
+
+    --secondary: 240 12% 12%;
+    --secondary-foreground: 40 15% 75%;
+
+    --muted: 240 10% 14%;
+    --muted-foreground: 220 10% 50%;
+
+    --accent: 28 80% 45%;
+    --accent-foreground: 40 20% 95%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 10% 16%;
+    --input: 240 10% 16%;
+    --ring: 28 100% 55%;
+
+    --radius: 0.5rem;
+
+    --mars-glow: 28 100% 55%;
+    --mars-deep: 15 80% 25%;
+    --mars-surface: 20 60% 15%;
+    --terminal-green: 142 70% 50%;
+
+    --sidebar-background: 240 15% 5%;
+    --sidebar-foreground: 40 15% 75%;
+    --sidebar-primary: 28 100% 55%;
+    --sidebar-primary-foreground: 240 20% 4%;
+    --sidebar-accent: 240 12% 12%;
+    --sidebar-accent-foreground: 40 15% 75%;
+    --sidebar-border: 240 10% 16%;
+    --sidebar-ring: 28 100% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .font-body {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3), 0 0 60px hsl(var(--primary) / 0.1);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 10px hsl(var(--primary) / 0.5), 0 0 30px hsl(var(--primary) / 0.2);
+  }
+
+  .scanline {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsl(var(--primary) / 0.03) 2px,
+      hsl(var(--primary) / 0.03) 4px
+    );
+  }
+
+  .grid-pattern {
+    background-image: 
+      linear-gradient(hsl(var(--border) / 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.5) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}

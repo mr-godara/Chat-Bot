@@ -1,0 +1,4 @@
+project_id = "jvooclvuesoyvlfzrilk"
+
+[functions.mars-chat]
+verify_jwt = false
